@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <head>	
+  <html lang="en">
+  <meta charset="UTF-8">	
+    <title>Augmented Dungeon</title>	
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="scripts.js"></script>
+    <link rel="icon" type="image/png" href="imgs/icon.png">
+    <script>
+      let sC = localStorage.getItem("successCheck");
+      function loadChecker(){
+        if(sC!=0){
+          document.getElementsByClassName("collectSheets")[0].style.display="block";
+          document.getElementsByClassName("collectSheets")[1].style.display="block";
+        }
+      }
+      function gatherSheets(){
+        localStorage.setItem("pickedUpSheets",1);
+        document.getElementById("sheetsCollected").style.display="block";
+      }
+      
+    </script>
+    <style>
+      button{
+        border:none;
+        font-size:25px;
+        text-decoration: underline;
+        width: auto;
+        height: auto;
+        margin-bottom:25px;
+        padding:0;
+        text-align: left;
+        cursor:pointer;
+      }
+      button:hover{
+        background-color: #000000;
+        color:#66ff38;
+      }
+    </style>
+  </head>
+  <body onload="loadChecker()">
+    <p>Nothing special here, just a metal frame, sheets, and a cot.</p>
+    <p class="collectSheets" style="display:none"><i>Maybe I can fashion a rope out of these sheets to climb down to the ground outside.</i></p>
+     <p id="sheetsCollected" style="display:none">You gather the sheets and tie them together. Its around 25 feet long.</p>
+    <button class="collectSheets" onclick="gatherSheets()" style="display:none">Gather sheets</button>
+    <a href="start.html">Go back</a>
+
+  </body>
+ </html>
